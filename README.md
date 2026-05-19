@@ -260,6 +260,106 @@ for name, kor, eng in zip(names, korean, english):
 
 ---
 
+2026.5.17. day5
+# 📚 Python 04장 - 함수와 입출력 정리
+
+## 함수 기본
+```python
+def 함수명(매개변수):
+    실행할_코드
+    return 반환값
+```
+- `def` : 함수 정의
+- `return` : 값 반환 (없으면 None 반환)
+- print는 화면 출력, return은 값 반환 → 완전 다른 개념
+
+## 입력값/반환값 유형
+| 유형 | 예시 |
+|------|------|
+| 입력X 반환X | `def say(): print("hi")` |
+| 입력O 반환X | `def say(name): print(name)` |
+| 입력X 반환O | `def get_age(): return 20` |
+| 입력O 반환O | `def add(a, b): return a + b` |
+
+## *args / **kwargs
+- `*args` : 여러 입력값을 **튜플**로 받음
+- `**kwargs` : 여러 입력값을 **딕셔너리**로 받음
+
+```python
+def add_many(*args):
+    result = 0
+    for i in args:
+        result += i
+    return result
+```
+
+## 매개변수 기본값
+```python
+def say_myself(name, age, man=True):
+    ...
+```
+- 기본값 있는 매개변수는 항상 **뒤**에 위치
+
+## 지역변수
+- 함수 안의 변수는 함수 안에서만 살아있음
+- 함수 밖 변수를 바꾸려면 → `return` 으로 반환받기
+
+```python
+a = 1
+def vartest(a):
+    a = a + 1
+    return a
+
+a = vartest(a)  # 2
+```
+
+## lambda (한 줄 함수)
+```python
+add = lambda a, b: a + b
+add(3, 4)  # 7
+```
+
+## 사용자 입력
+```python
+number = input("입력: ")  # 항상 문자열로 저장됨
+number = int(input("입력: "))    # 정수로 변환
+number = float(input("입력: "))  # 실수로 변환
+```
+
+## 자료형 변환
+| 함수 | 의미 |
+|------|------|
+| `int()` | 정수 (integer) |
+| `float()` | 실수 (floating point) |
+| `str()` | 문자열 (string) |
+| `type()` | 자료형 확인 |
+
+## print 옵션
+```python
+print(i, end=" ")  # 줄바꿈 대신 공백
+print("a", "b", sep="-")  # 구분자 변경
+```
+- `end` 기본값은 `\n` (줄바꿈)
+
+## 파일 입출력
+```python
+# 쓰기
+with open("test.txt", 'w') as f:
+    f.write("내용\n")
+
+# 읽기
+with open("test.txt", 'r') as f:
+    data = f.read()
+```
+
+| 모드 | 기능 |
+|------|------|
+| `'r'` | 읽기 |
+| `'w'` | 쓰기 (덮어씀) |
+| `'a'` | 추가 (이어씀) |
+
+- `with` 사용 시 `close()` 자동 처리 → 실무 권장
+
 ## 핵심 깨달음
 - 파이썬은 외우는 게 아니라 **이해하고 쓰는** 언어
 - 변수명은 대부분 자유 (예약어 제외)
