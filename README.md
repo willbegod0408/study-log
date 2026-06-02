@@ -1,5 +1,5 @@
 # study-log
-나는 걔를 극복한다
+나는 극복한다
 # 데이터 분석가가 되기 위한 기록
   Day 1 - 2026.05.12
   정수형 말 그대로 정수 소수점없는 수 와 0 실수형 소수점이 포함된 수 하지만 1과 1.0은 다른 자료 값은 같지만  아주큰수 아주작은수는 4.24e 혹은 4.24E로 표현 
@@ -383,3 +383,50 @@ with open("test.txt", 'r') as f:
 - 이해 근육: 80점
 - 짜는 근육: 30점
 - 해결책: 책 끝나면 프로그래머스 Lv.0부터 문제 풀기 시작
+
+
+2026.06.02
+문자열 출력하기
+str = input()
+print(str)
+문자열을 str input()을 통해 프로그래머스가 자동 넣어주고 그 이후 print()를 통해 문자열을 그대로 출력
+
+a와b출력하기
+a,b = map(int,input().spilt())
+print(f"a = {a}")
+print(f"b = {b}")
+input()으로 값을 받고 .split()은 괄호에 아무것도 없으면 공백을 기준으로 값을 나눠서 표현 그후 input으로 값을 받고 map은 받는 값이 2개이상일때 사용 =전후 공백
+f문으로 받는 이유는 a={a}로 출력하기 위해서 f문 사용 f문에서는 중괄호 안에있는 내용만 변수취급해서 변환해서 표출 그 외의 값은 그냥 그대로 표출
+
+문자열 반복해서 출력하기
+str,n=input().split()
+n=int(n)
+print(str*n)
+string 5인경우 input.split으로 string 5로 나뉘어서 받고 그이후에 각각 str n의 겂 n은 숫자로써의 기능으로 사용하기 위해 int(n)사용 그 이후 print(str*n)으로 포출
+
+대소문자 바꿔서 출력하기
+str=input()
+result=""
+for i in str:
+  if i.isupper():
+    result += i.lower()
+  else:
+    result += i.upper()
+print(result)
+한글짜식 for문으로 확인 
+i.isupper 대문자인지 확인 하는 매서는 반환값이 true false라 if문에 세트로 사용
+lower()/upper() 대소문자 변환 매서드
+result+= i결괏값 한글짜식 if문에 충족후 이어붙이기 
+result=""결과를 담을 빈 문자열 필요해서 미리 적용시킴
+
+특수문자 출력하기
+print("!@#$%^&*(\\'\"<>?:;)
+따옴표안에 따옴표있으면 이스케이프 역슬라이스 필요
+
+오늘의 중요포인트
+# 패턴 1: 숫자 여러 개 입력받기
+a, b = map(int, input().split())
+
+# 패턴 2: 한 글자씩 처리하기
+for i in str:
+    result += i.upper()
