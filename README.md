@@ -430,3 +430,33 @@ a, b = map(int, input().split())
 # 패턴 2: 한 글자씩 처리하기
 for i in str:
     result += i.upper()
+
+#2026.06.03
+1.덧셈식 출력하기
+a,b=map(int,input().split())
+print(f"{a} + {b} + {a+b}")
+map으로 a,b두개로 받고 split()으로 공백을 기준으로 4 5 를 4와 5로 나누고 int로 숫자열로 받은후에 print(f문을 통해 4 + 5 = 9 라는 값을 출력 숫자계산필요해서 int로 바꿔야할게 2개이상일때는 map사용필요 문자열 그대로 사용시 map필요x
+
+2.문자열 붙여서 출력하기
+str1 , str2 = = input().split()
+print(str1 +  str2)
+공북이 존재하는 문자열을 받고 그 공백을 기준으로 str1 str2 2개로 나눈후 문자열 그대로 붙이기위해서 두개를 더해서 print하면 값 출력
+
+3.문자열 돌리기
+str = input()
+for i in str:
+  print(i)
+for문을 통해서 str에 있는 문자열을 하나씩 받고 그 하나씩 표출하면 원하는 결괏값나옴
+
+4.홀짝 구분하기
+a = int(input())
+if a % 2 == 0:
+  print(f"{a} is even"}
+else:
+  print(f"{a} is odd")
+a를 인풋이랑 int로 숫자로 받고 if문을 사용해서 2로 나눴을때 나머지가 0이면 짝수 아니면 홀수 라는 기준을 세우고 print f구문을 통해서 원하는 결괏값을 도출
+
+5.문자열 겹쳐쓰기
+der solution(my_string, overwrite_string, s):
+  retrun my_sting[:s] + overwrite_string + my+string[s+len(overwrite_string):]
+def solution이라는 함수를 만들고 그속에있는 객체 값을 괄호안에 다 정하고 그 이후 retrun값으로 첫번째 인덱스 s 번째 즉 s-1  번째의 문자열까지 나타내고 그다음에 overwrite_string에 해당하는 내용을 더하고 만약이걸더하고도 my_string의 문자열이 남으면 그 나머지[:] 이 기능을 이용해서 나머지를 뒤에 붙여서 결과값을 나타낸다
