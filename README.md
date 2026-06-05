@@ -460,3 +460,69 @@ a를 인풋이랑 int로 숫자로 받고 if문을 사용해서 2로 나눴을�
 der solution(my_string, overwrite_string, s):
   retrun my_sting[:s] + overwrite_string + my+string[s+len(overwrite_string):]
 def solution이라는 함수를 만들고 그속에있는 객체 값을 괄호안에 다 정하고 그 이후 retrun값으로 첫번째 인덱스 s 번째 즉 s-1  번째의 문자열까지 나타내고 그다음에 overwrite_string에 해당하는 내용을 더하고 만약이걸더하고도 my_string의 문자열이 남으면 그 나머지[:] 이 기능을 이용해서 나머지를 뒤에 붙여서 결과값을 나타낸다
+
+## 📚 Day 3 - 2026.06.05
+
+### 1. 문자열 섞기
+```python
+def solution(str1, str2):
+    result = ""
+    for i in range(len(str1)):
+        result += str1[i] + str2[i]
+    return result
+```
+- `range(len(str1))` → 인덱스 번호 0,1,2...
+- i는 str1, str2 둘 다에 쓰이는 번호
+- 각각 한 글자씩 번갈아 이어붙이기
+
+---
+
+### 2. 문자 리스트를 문자열로 변환하기
+```python
+def solution(arr):
+    result = ""
+    for i in arr:
+        result += i
+    return result
+```
+- 리스트에서 하나씩 꺼내서 빈 문자열에 이어붙이기
+
+---
+
+### 3. 문자열 반복하기
+```python
+def solution(my_string, k):
+    return my_string * k
+```
+- 문자열 * 숫자 = 그 수만큼 반복
+
+---
+
+### 4. 더 크게 합치기
+```python
+def solution(a, b):
+    ab = int(str(a) + str(b))
+    ba = int(str(b) + str(a))
+    if ab > ba:
+        return ab
+    else:
+        return ba
+```
+- 숫자를 str()로 문자열로 바꿔서 앞뒤로 이어붙임
+- 다시 int()로 숫자로 변환해서 크기 비교
+- 더 큰 값 반환
+
+---
+
+### 5. 두 수의 연산값 비교하기
+```python
+def solution(a, b):
+    ab = int(str(a) + str(b))
+    if ab >= 2 * a * b:
+        return ab
+    else:
+        return 2 * a * b
+```
+- ab = a와 b를 앞뒤로 이어붙인 숫자
+- ab와 2*a*b 중 더 크거나 같은 값 반환
+- 같을 경우 ab 반환
